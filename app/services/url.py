@@ -18,3 +18,9 @@ def create_short_url(original_url: str) -> tuple[str, str]:
     short_code = _generate_short_code()
     _urls[short_code] = original_url
     return short_code, original_url
+
+
+def get_original_url(short_code: str) -> str | None:
+    """Retrieve the original URL for a given short code. Returns None if not found."""
+    return _urls.get(short_code)
+
